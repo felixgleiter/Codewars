@@ -1,0 +1,8 @@
+function iqTest(numbers){
+  //Transform the base 10 numbers into a binary string
+  var num_str = numbers.split(" ").map(x => (parseInt(x, 10)) % 2).reduce((a,b) => a + b, "");
+  //Find the position of the unique entry in the string, which will be 0 or 1
+  var val = "";
+  (num_str.indexOf("0") == num_str.lastIndexOf("0")) ? val = "0" : val = "1";
+  return num_str.indexOf(val) + 1;
+}
