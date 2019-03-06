@@ -1,0 +1,11 @@
+function solution(list){
+  var str_arr = [];
+  for (var i = 0; i < list.length; i++) {
+    str_arr.push(list[i]);
+    if (i + 2 < list.length && list[i] + 2 == list[i + 2]) {
+      str_arr[str_arr.length - 1] += "-" + list[list.slice(i + 2).findIndex(x => list[list.indexOf(x) + 1] != x + 1) + (i + 2)];
+      i = list.slice(i + 2).findIndex(x => list[list.indexOf(x) + 1] != x + 1) + (i + 2);
+    }
+  }
+  return str_arr.join();
+}
