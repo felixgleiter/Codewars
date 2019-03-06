@@ -1,0 +1,7 @@
+//Signature is an array of length m, n & m are positive integers
+function tribonacci(signature, n , m) {
+  for (var i = 0; i < n - m; i++) {
+    signature.push(signature.slice(i, i + m).reduce((a,b) => a + b));
+  }
+  return signature.slice(0, n);
+}
